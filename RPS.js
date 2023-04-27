@@ -40,22 +40,16 @@ const game = () => {
         const robotScoreBoard = document.querySelector('.r-count');
         player = player.toLowerCase();
         robot = robot.toLowerCase();
-        console.log(player);
-        console.log(robot);
-        result.textContent = 'Test';
-        console.log(player === robot);
-        if (player === 'bob'){
+        if (player === robot){
             result.textContent = 'The attacks cancel each other out!';
         }
         else if(player == 'rock'){
             if(robot == 'paper'){
-                alert('rock = paper');
-                result.textContent = 'The robot"s paper attack has wrapped up your rock!';
+                result.textContent = "The robot's paper attack has wrapped up your rock!";
                 robotScore++;
                 robotScoreBoard.textContent = robotScore;
             
             }else{
-                alert('rock = nothing')
                 result.textContent = 'Your rock smashes the robot"s feeble scissors!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -63,12 +57,10 @@ const game = () => {
         }
         else if(player == 'scissors'){
             if(robot == 'rock'){
-                alert('scissors = rock');
                 result.textContent = 'The robot"s rock was too powerful for your scissors!';
                 robotScore++;
                 robotScoreBoard.textContent = robotScore;
             }else{
-                alert('scissors = nothing');
                 result.textContent = 'Your scissors sliced easily through the robot"s paper!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -76,12 +68,10 @@ const game = () => {
         }
         else if(player == 'paper'){
             if(robot == 'scissors'){
-                alert('paper = scissors');
                 result.textContent = 'The robot"s scissors were simply too sharp against your paper';
                 robotScore ++;
                 robotScoreBoard.textContent = robotScore;
             }else{
-                alert('paper = nothing');
                 result.textContent = 'Your paper wrapped the robot"s rock, stopping it in it"s tracks!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -93,7 +83,9 @@ const game = () => {
 
         const result = document.querySelector('.results');
         const againBtn = document.querySelector('.Again');
+        const Message = document.querySelector('.text');
 
+        Message.innerText = "Excellent work Player Snek! You have defeated the Great Robot Emperor 01000010 01010101 01010100 01010100! Your name will go down in history as the savior of mankind! The battle must've been grueling. If you wish to reflect on those experiences, just click down below."
         result.innerText = 'The Robots have fallen! A new message from the General awaits above ^';
         
         againBtn.innerText = 'Relive the Battle';
@@ -107,7 +99,9 @@ const game = () => {
 
         const outcome = document.querySelector('.results');
         const againBtn = document.querySelector('.Again');
+        const Message = document.querySelector('.text');
 
+        Message.innerText = "You tried your hardest, I understand. Overlord 01000010 01010101 01010100 01010100 was simply too powerful of a foe, his functions were too well defined. Do not lose hope though, the resistance has developed a time machine. I will distract them when I go to get my daily oil ration, that 10w40 ain't too bad once ya get used to it. Click the button below if you want to travel back to try to stop them again, good luck Player Snek."
         outcome.innerText = 'All praise our new Robot Overlords. A message from the general awaits ^';
         
         againBtn.innerText = 'Rewind Time';
