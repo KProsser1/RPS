@@ -1,8 +1,8 @@
 html {
     background-image: url("sn-rockpaper.jpg");
     background-repeat: no repeat;
-    background-size: cover;
-    object-fit: cover;
+    background-size:cover;
+    object-fit:cover;
 }
 
 body {
@@ -14,6 +14,7 @@ body {
 header {
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size:x-large;
     padding: 0;
     margin-bottom: 0;
@@ -54,22 +55,71 @@ body, html {
 .buttons {
     display: flex;
     flex: 1;
-    min-height: 100vh;
+    min-height: 100px;
     align-items: center;
-    justify-content: space-evenly;   
+    justify-content: space-evenly;
+    margin-bottom: 50px;  
 }
 
-.button {
+.play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: .4rem solid black;
     border-radius: 20px;
     margin: 1rem;
     font-size: 1.5rem;
     padding: 1rem .5rem;
+    transition: .07s ease;
+    width: 50px;
+    height: 15px;
+    color: red;
+    background-color: black;
+    cursor: pointer;
+}
+
+.PlayTextBox {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.results {
+    display: none;
+    background: black;
+    color: red;
+}
+
+.Again {
+    display: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: black;
+    color: red;
+    cursor: pointer;
+}
+
+button {
+    border: .4rem solid black;
+    border-radius: 20px;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem; 
     width: 12rem;
     height: 12rem;
     text-align:center;
     color: red;
     background-color: black;
+    cursor: pointer;
 }
 
 img {
@@ -77,3 +127,35 @@ img {
     height: 80%;
 }
 
+/*.choice {
+    transition: all .07s ease;
+    transform: scale(1.1);
+    border-color: #2eb82e;
+    box-shadow: 0 0 1rem #2eb82e;
+    color:#2eb82e;
+}*/
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: #2eb82e;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.PScore, .RScore{
+    display: flex;
+    justify-content: space-between;
+}
+
+.PlayerScore, .RobotScore {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 612px)
+{
+    .header, .intro{
+        text-align: center;
+    }
+}
