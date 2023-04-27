@@ -10,23 +10,25 @@ const game = () => {
         const PaperBtn = document.querySelector('.paper');
         const ScissorsBtn = document.querySelector('.scissors');
         const playerChoices = [RockBtn,PaperBtn,ScissorsBtn];
-        const robotChoices = ['rock','paper','scissors']
+        const robotChoices = ['rock','paper','scissors'];
         //const resultText = document.querySelector('.text')
-
+        
         playerChoices.forEach(choice => {
             choice.addEventListener('click',function(){
 
+                
                 const robotNumber = Math.floor(Math.random()*3);
                 const robotAttack = robotChoices[robotNumber];
 
-                winner(this.innerText,robotAttack)
+                winner(this.innerText,robotAttack);
 
-                if(playerScore == 5){
-                    gameOverPlayer()
+                if(playerScore === 5){
+                    gameOverPlayer();
                 }
-                if (robotScore == 5){
-                    gameOverRobot()
-                } 
+                if (robotScore === 5){
+                    gameOverRobot();
+                }
+                
             })
         })
 
@@ -34,20 +36,26 @@ const game = () => {
 
     const winner = (player, robot) => {
         const result = document.querySelector('.results');
-        const playerScore = document.querySelector('.p-count');
-        const robotScore = document.querySelector('.r-count');
+        const playerScoreBoard = document.querySelector('.p-count');
+        const robotScoreBoard = document.querySelector('.r-count');
         player = player.toLowerCase();
         robot = robot.toLowerCase();
-        if (player === robot){
-            result.textContent = 'The attacks cancel each other out!'
+        console.log(player);
+        console.log(robot);
+        result.textContent = 'Test';
+        console.log(player === robot);
+        if (player === 'bob'){
+            result.textContent = 'The attacks cancel each other out!';
         }
         else if(player == 'rock'){
             if(robot == 'paper'){
+                alert('rock = paper');
                 result.textContent = 'The robot"s paper attack has wrapped up your rock!';
                 robotScore++;
                 robotScoreBoard.textContent = robotScore;
             
             }else{
+                alert('rock = nothing')
                 result.textContent = 'Your rock smashes the robot"s feeble scissors!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -55,10 +63,12 @@ const game = () => {
         }
         else if(player == 'scissors'){
             if(robot == 'rock'){
+                alert('scissors = rock');
                 result.textContent = 'The robot"s rock was too powerful for your scissors!';
                 robotScore++;
                 robotScoreBoard.textContent = robotScore;
             }else{
+                alert('scissors = nothing');
                 result.textContent = 'Your scissors sliced easily through the robot"s paper!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -66,10 +76,12 @@ const game = () => {
         }
         else if(player == 'paper'){
             if(robot == 'scissors'){
+                alert('paper = scissors');
                 result.textContent = 'The robot"s scissors were simply too sharp against your paper';
                 robotScore ++;
                 robotScoreBoard.textContent = robotScore;
             }else{
+                alert('paper = nothing');
                 result.textContent = 'Your paper wrapped the robot"s rock, stopping it in it"s tracks!';
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
@@ -79,10 +91,10 @@ const game = () => {
 
     const gameOverPlayer = () => {
 
-        const outcome = document.querySelector('.results');
+        const result = document.querySelector('.results');
         const againBtn = document.querySelector('.Again');
 
-        outcome.innerText = 'The Robots have fallen! A new message from the General awaits above ^';
+        result.innerText = 'The Robots have fallen! A new message from the General awaits above ^';
         
         againBtn.innerText = 'Relive the Battle';
         againBtn.style.display = 'flex'
