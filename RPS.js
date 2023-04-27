@@ -50,29 +50,29 @@ const game = () => {
                 robotScoreBoard.textContent = robotScore;
             
             }else{
-                result.textContent = 'Your rock smashes the robot"s feeble scissors!';
+                result.textContent = "Your rock smashes the robot's feeble scissors!";
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
         else if(player == 'scissors'){
             if(robot == 'rock'){
-                result.textContent = 'The robot"s rock was too powerful for your scissors!';
+                result.textContent = "The robot's rock was too powerful for your scissors!";
                 robotScore++;
                 robotScoreBoard.textContent = robotScore;
             }else{
-                result.textContent = 'Your scissors sliced easily through the robot"s paper!';
+                result.textContent = "Your scissors sliced easily through the robot's paper!";
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
         else if(player == 'paper'){
             if(robot == 'scissors'){
-                result.textContent = 'The robot"s scissors were simply too sharp against your paper';
+                result.textContent = "The robot's scissors were simply too sharp against your paper";
                 robotScore ++;
                 robotScoreBoard.textContent = robotScore;
             }else{
-                result.textContent = 'Your paper wrapped the robot"s rock, stopping it in it"s tracks!';
+                result.textContent = "Your paper wrapped the robot's rock, stopping it in it's tracks!";
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
